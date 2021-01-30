@@ -13,6 +13,7 @@
     "apollo-server": "2.19",
     "bcrypt": "5.0",
     "dotenv": "8.2",
+    "jsonwebtoken": "8.5",
     "mongoose": "5.11"
   },
   "devDependencies": {

@@ -29,3 +29,24 @@ Query Variables:
 	}
 }
 ```
+
+### Login
+
+Query:
+```
+mutation login($input: AuthInput) {
+  login(input: $input) {
+    token,
+  }
+}
+```
+
+Query Variables:
+```
+{
+  "input": {
+    "email": "rominavarela@github.com",
+    "password": "rominapass"
+	}
+}
+```

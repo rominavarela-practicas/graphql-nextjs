@@ -9,6 +9,7 @@ const typeDefs = gql `
 
   type Mutation {
     createUser(input: UserInput): User
+    login(input: AuthInput): AuthToken
   }
 
   input UserInput {
@@ -23,6 +24,15 @@ const typeDefs = gql `
     email: String
     createdAt: Timestamp
     updatedAt: Timestamp
+  }
+
+  input AuthInput {
+    email: String!
+    password: String!
+  }
+
+  type AuthToken {
+    token: String
   }
 `;
 
