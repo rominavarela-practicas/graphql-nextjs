@@ -4,26 +4,17 @@ https://www.udemy.com/course/fullstack-react-graphql-y-apollo-de-principiante-a-
 
 ## Playground Queries
 
-### Basic Synthax
+### Create User
 
 Query:
 ```
-query {
-  obtenerCursos(input: { tecnologia: "js"}) {
-    titulo
-    tecnologia
-  }
-}
-```
-
-### With Variables
-
-Query:
-```
-query obtenerCursos($input: CursoInput!) {
-  obtenerCursos(input: $input) {
-    titulo
-    tecnologia
+mutation createUser($input: UserInput) {
+  createUser(input: $input) {
+    id,
+    name,
+    email,
+    createdAt,
+    updatedAt,
   }
 }
 ```
@@ -32,7 +23,9 @@ Query Variables:
 ```
 {
   "input": {
-  	"tecnologia": "js"
+  	"name": "Romina",
+    "email": "rominavarela@github.com",
+    "password": "rominapass"
 	}
 }
 ```
