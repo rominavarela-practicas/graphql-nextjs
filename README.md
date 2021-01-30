@@ -10,7 +10,7 @@ Query:
 ```
 mutation createUser($input: UserInput) {
   createUser(input: $input) {
-    id,
+    _id,
     name,
     email,
     createdAt,
@@ -48,5 +48,27 @@ Query Variables:
     "email": "rominavarela@github.com",
     "password": "rominapass"
 	}
+}
+```
+
+### Get User
+
+Query:
+```
+query getUser {
+  getUser {
+    _id,
+    name,
+    email,
+    createdAt,
+    updatedAt,
+  }
+}
+```
+
+Headers:
+```
+{
+  "Authorization": token
 }
 ```

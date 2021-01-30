@@ -4,12 +4,20 @@ const typeDefs = gql `
   scalar Timestamp
 
   type Query {
-    getUsers:[User]
+    getUser: User
   }
 
   type Mutation {
     createUser(input: UserInput): User
     login(input: AuthInput): AuthToken
+  }
+
+  type User {
+    _id: ID
+    name: String
+    email: String
+    createdAt: Timestamp
+    updatedAt: Timestamp
   }
 
   input UserInput {
@@ -18,21 +26,13 @@ const typeDefs = gql `
     password: String!
   }
 
-  type User {
-    id: ID
-    name: String
-    email: String
-    createdAt: Timestamp
-    updatedAt: Timestamp
+  type AuthToken {
+    token: String
   }
 
   input AuthInput {
     email: String!
     password: String!
-  }
-
-  type AuthToken {
-    token: String
   }
 `;
 
