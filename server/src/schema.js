@@ -1,6 +1,8 @@
 const { gql } = require('apollo-server');
 
 const typeDefs = gql `
+  scalar Timestamp
+
   type Query {
     getUsers:[User]
   }
@@ -19,8 +21,8 @@ const typeDefs = gql `
     id: ID
     name: String
     email: String
-    createdAt: Int
-    updatedAt: Int
+    createdAt: Timestamp
+    updatedAt: Timestamp
   }
 `;
 
