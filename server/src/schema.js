@@ -8,10 +8,16 @@ const typeDefs = gql `
   }
 
   type Mutation {
+    # User
     createUser(input: UserInput): User
     login(input: AuthInput): AuthToken
+
+    # Product
+    createProduct(input: ProductInput): Product
+
   }
 
+  # User
   type User {
     _id: ID
     name: String
@@ -33,6 +39,22 @@ const typeDefs = gql `
   input AuthInput {
     email: String!
     password: String!
+  }
+
+  # Product
+  type Product {
+    _id: ID
+    name: String
+    count: Int
+    price: Float
+    createdAt: Timestamp
+    updatedAt: Timestamp
+  }
+
+  input ProductInput {
+    name: String!
+    count: Int!
+    price: Float!
   }
 `;
 

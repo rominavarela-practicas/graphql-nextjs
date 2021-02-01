@@ -11,7 +11,6 @@ module.exports = {
     }
     args.input.password = await bcrypt.hash(args.input.password, BCryptSaltRounds);
     const user = new User(args.input);
-    await user.save();
-    return user;
+    return await user.save();
   },
 };

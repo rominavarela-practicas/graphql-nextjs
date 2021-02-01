@@ -72,3 +72,29 @@ Headers:
   "Authorization": token
 }
 ```
+
+### Create Product
+
+Query:
+```
+mutation createProduct($input: ProductInput) {
+  createProduct(input: $input) {
+    name,
+    count,
+    price,
+    createdAt,
+    updatedAt,
+  }
+}
+```
+
+Query Variables:
+```
+{
+  "input": {
+  	"name": "Fish",
+    "count": 20,
+    "price": 5.0
+	}
+}
+```
