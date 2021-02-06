@@ -5,6 +5,8 @@ const typeDefs = gql `
 
   type Query {
     getUser: User
+    getProducts:[Product]
+    getProduct(id:ID!): Product
   }
 
   type Mutation {
@@ -14,7 +16,8 @@ const typeDefs = gql `
 
     # Product
     createProduct(input: ProductInput): Product
-
+    updateProduct(id: ID!, input: ProductInput): Product
+    deleteProduct(id: ID!): ID
   }
 
   # User
