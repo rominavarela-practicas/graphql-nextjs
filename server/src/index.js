@@ -2,8 +2,7 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 const { ApolloServer } = require('apollo-server');
 const MongoUri = require('./config/MongoUri');
-const typeDefs = require('./schema');
-const resolvers = require('./resolvers');
+const { typeDefs, resolvers } = require('./domain');
 const context = require('./context');
 
 const server = new ApolloServer({ typeDefs, resolvers, context });
